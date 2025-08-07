@@ -18,7 +18,7 @@
                     <td><h3>{{ $bb->title }}</h3></td>
                     <td>{{ $bb->price }}</td>
                     <td>
-                        <a href="{{ $bb->id }}">More details...</a>
+                        <a href="{{route('detail', ['bb' => $bb->id] )}}">More details...</a>
                     </td>
                 </tr>
                 @endforeach

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BbsController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 
@@ -20,7 +21,11 @@ Route::middleware(['auth'])->group(function () {
     Volt::route('settings/appearance', 'settings.appearance')->name('settings.appearance');
 });
 
-Route::get('/', [BbsController::class, 'index'])->name('bbs.index');
-Route::get('/{bb}', [BbsController::class, 'detail'])->name('bbs.detail');
+Route::get('/', [BbsController::class, 'index'])->name('index');
+Route::get('/{bb}', [BbsController::class, 'detail'])->name('detail');
 
 require __DIR__.'/auth.php';
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
