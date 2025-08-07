@@ -21,5 +21,6 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::get('/', [BbsController::class, 'index'])->name('bbs.index');
+Route::get('/{bb}', [BbsController::class, 'detail'])->name('bbs.detail');
 
 require __DIR__.'/auth.php';
