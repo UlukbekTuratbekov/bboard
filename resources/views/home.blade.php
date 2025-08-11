@@ -18,10 +18,10 @@
                     <td><h3>{{ $bb->title }}</h3></td>
                     <td>{{ $bb->price }}</td>
                     <td>
-                        <a href="">Change</a>
+                        <a href="{{ route('bb.edit', ['bb' => $bb->id]) }}">Change</a>
                     </td>
                     <td>
-                        <a href="">Delete</a>
+                        <a href="{{ route('bb.delete', ['bb' => $bb->id]) }}">Delete</a>
                     </td>
                 </tr>
             @endforeach
