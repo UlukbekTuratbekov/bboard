@@ -8,7 +8,7 @@
             <thead>
                 <tr>
                     <th>Product</th>
-                    <th>Price, pyб.</th>
+                    <th>Price</th>
                     <th>&nbsp;</th>
                 </tr>
             </thead>

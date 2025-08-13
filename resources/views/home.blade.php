@@ -11,7 +11,7 @@
             <thead>
                 <tr>
                     <th>Product</th>
-                    <th>Price, pyб.</th>
+                    <th>Price</th>
                     <th colspan="2">&nbsp;</th>
                 </tr>
             </thead>
