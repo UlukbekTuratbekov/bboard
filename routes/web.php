@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BbsController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
@@ -29,7 +30,7 @@ require __DIR__.'/auth.php';
 
 Auth::routes();
 
-Route::get('/home/{username}', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/home/add', [HomeController::class, 'showAddBbForm'])->name('bb.add');
 Route::post('/home', [HomeController::class, 'storeBb'])->name('bb.store');
 Route::get('/home/{bb}/edit', [HomeController::class, 'showEditBbForm'])->name('bb.edit')->middleware('can:update,bb');
@@ -38,4 +39,6 @@ Route::get('/home/{bb}/delete', [HomeController::class, 'showDeleteBbForm'])->na
 Route::delete('/home/{bb}', [HomeController::class, 'destroyBb'])->name('bb.destroy')->middleware('can:destroy,bb');
 
 Route::get('/{bb}', [BbsController::class, 'detail'])->name('detail');
+
+Route::resource('posts', PostController::class);
 

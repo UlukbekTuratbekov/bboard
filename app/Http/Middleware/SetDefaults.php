@@ -16,7 +16,10 @@ class SetDefaults
      */
     public function handle(Request $request, Closure $next): Response
     {
-        URL::defaults(['username' => request()->user()->name]);
+        if ($request->user()) {
+            URL::defaults(['username' => request()->user()->name]);
+        }
+
         return $next($request);
     }
 }
