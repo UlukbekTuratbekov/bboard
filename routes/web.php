@@ -29,7 +29,7 @@ require __DIR__.'/auth.php';
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home/{username}', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/home/add', [HomeController::class, 'showAddBbForm'])->name('bb.add');
 Route::post('/home', [HomeController::class, 'storeBb'])->name('bb.store');
 Route::get('/home/{bb}/edit', [HomeController::class, 'showEditBbForm'])->name('bb.edit')->middleware('can:update,bb');
